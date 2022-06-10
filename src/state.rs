@@ -18,7 +18,7 @@ pub struct State {
     vertex_buffer: wgpu::Buffer,
     index_buffer: wgpu::Buffer,
     num_indices: usize,
-    diffuse_bind_group: wgpue::BindGroup
+    diffuse_bind_group: wgpu::BindGroup
 }
 
 impl State {
@@ -56,7 +56,7 @@ impl State {
         
         surface.configure(&device, &config);
 
-        let diffuse_byes = include_bytes!("happy-tree.png");
+        let diffuse_bytes = include_bytes!("happy-tree.png");
         let diffuse_image = image::load_from_memory(diffuse_bytes).unwrap();
         let diffuse_rgba = diffuse_image.to_rgba8();
 
@@ -83,7 +83,7 @@ impl State {
             wgpu::ImageCopyTexture {
                 texture: &diffuse_texture,
                 mip_level: 0,
-                origin: Origin3d::ZERO,
+                origin: wgpu::Origin3d::ZERO,
                 aspect: wgpu::TextureAspect::All
             }, 
             &diffuse_rgba, 
@@ -106,7 +106,7 @@ impl State {
         });
 
         let texture_bind_group_layout = device.create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
-            label: SOme("texture_bind_group_layout"),
+            label: Some("texture_bind_group_layout"),
             entries: &[
                 wgpu::BindGroupLayoutEntry {
                     binding: 0,
