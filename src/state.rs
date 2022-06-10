@@ -499,7 +499,7 @@ impl State {
             render_pass.set_vertex_buffer(1, self.instance_buffer.slice(..));
             render_pass.set_index_buffer(self.index_buffer.slice(..), wgpu::IndexFormat::Uint16);
             
-            render_pass.draw_indexed(0..(self.num_indices as u32), 0, 0..1);
+            render_pass.draw_indexed(0..(self.num_indices as u32), 0, 0..self.instances.len() as _);
         }
         self.queue.submit(std::iter::once(encoder.finish()));
         output.present();
