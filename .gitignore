@@ -1,2 +1,4 @@
 
 target/debug/
+target/release/
+!target/release/rust-game.exe
