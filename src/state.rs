@@ -20,7 +20,7 @@ pub struct State {
     index_buffer: wgpu::Buffer,
     num_indices: usize,
     diffuse_bind_group: wgpu::BindGroup,
-    diffuse_texture: wgpu::Texture
+    diffuse_texture: texture::Texture
 }
 
 impl State {
