@@ -30,8 +30,8 @@ impl Vertex {
 pub const VERTICES: &[Vertex] = &[
     Vertex { position: [0.5, 0.5, 0.0], tex_coords: [0.0, 0.0] }, // A
     Vertex { position: [-0.5, 0.5, 0.0], tex_coords: [1.0, 0.0] }, //B 
-    Vertex { position: [-0.25, -0.5, 0.0], tex_coords: [0.0, 1.0] }, // C
-    Vertex { position: [0.5, 0.25, 0.0], tex_coords: [1.0, 1.0] }, // D
+    Vertex { position: [-0.5, -0.5, 0.0], tex_coords: [0.0, 1.0] }, // C
+    Vertex { position: [0.5, -0.5, 0.0], tex_coords: [1.0, 1.0] }, // D
 ];
 
 pub const INDICES: &[u16] = &[
