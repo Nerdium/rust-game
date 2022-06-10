@@ -1,5 +1,6 @@
 
 mod state;
+mod texture;
 mod vertex;
 
 use crate::state::State;
